@@ -188,7 +188,7 @@ class MyAssetContract extends Contract {
     //generate ballot with the given votableItems
     await this.generateBallot(ctx, votableItems, currElection, newVoter);
 
-    let response = `voter with voterId ${newVoter.voterId} is updated in the world state`;
+    let response = `El usuario ${newVoter.voterId} se ha registrado al blockchain.`;
     return response;
   }
 
@@ -289,7 +289,7 @@ class MyAssetContract extends Contract {
 
       if (voter.ballotCast) {
         let response = {};
-        response.error = 'this voter has already cast this ballot!';
+        response.error = 'Este usuario ya ha votado. Revisa que sea el correcto.';
         return response;
       }
 

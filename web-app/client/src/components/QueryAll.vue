@@ -1,7 +1,7 @@
 <template>
   <div class="posts">
-    <h1>Current State: All Key-Value Pairs in World State</h1>
-    <button v-on:click="queryAll()">Query All Assets</button>
+    <h1>Estado Actual: Todos los Pares Clave-Valor en el Estado Mundial</h1>
+    <button v-on:click="queryAll()">Consultar todos los Activos</button>
 
     <div v-bind:key="carEntry.Key" v-for="carEntry in response">
       <p>{{ carEntry.Key }} | {{ carEntry.Record }}</p>

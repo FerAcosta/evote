@@ -33,8 +33,8 @@ class Ballot {
       return this;
 
     } else {
-      console.log('a ballot has already been created for this voter');
-      throw new Error ('a ballot has already been created for this voter');
+      console.log('Este votante ya ha emitido su voto.');
+      throw new Error ('Este votante ya ha emitido su voto.');
     }
   }
 
@@ -55,13 +55,13 @@ class Ballot {
     if (!!buffer && buffer.length > 0) {
       let voter = JSON.parse(buffer.toString());
       if (voter.ballotCreated) {
-        console.log('ballot has already been created for this voter');
+        console.log('Este votante ya ha emitido su voto.');
         return false;
       } else {
         return true;
       }
     } else {
-      console.log('This ID is not registered to vote.');
+      console.log('ID no he sido registrado para votar.');
       return false;
     }
   }

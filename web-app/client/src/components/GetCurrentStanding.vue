@@ -1,8 +1,8 @@
 <template>
   <div class="posts">
-    <h1>Get the Current Poll Standings</h1>
+    <h1>Resultados Elección al Mejor Spiderman</h1>
 
-    <button v-on:click="getCurrentStanding()">Check Poll</button>
+    <button v-on:click="getCurrentStanding()">Obtener Resultados</button>
 
     <br>
     <span v-if="response">
@@ -12,6 +12,7 @@
     <vue-instant-loading-spinner id='loader' ref="Spinner"></vue-instant-loading-spinner>
     <div class="chart-wrapper">
       <chart :options="chartOptionsBar"></chart>
+      <br>
     </div>
   </div>
 </template>
@@ -54,11 +55,9 @@ export default {
       this.chartOptionsBar = {
         xAxis: {
           data: [
+            "Republican",
             "Democrat",
-            "Green",
-            "Independent",
-            "Libertarian",
-            "Republican"
+            "Green"
           ]
         },
         yAxis: {
@@ -71,7 +70,7 @@ export default {
           }
         ],
         title: {
-          text: "2020 ",
+          text: "2022 ",
           x: "center",
           textStyle: {
             fontSize: 24

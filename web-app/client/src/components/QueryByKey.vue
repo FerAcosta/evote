@@ -1,11 +1,11 @@
 <template>
   <div class="posts">
-    <h1>Query By Key</h1>
+    <h1>Consulta por Clave</h1>
     <form v-on:submit="queryByKey">
-      <input type="text" v-model="input.key" placeholder="Enter Key to Query">
+      <input type="text" v-model="input.key" placeholder="Ingresa Clave">
       <br>
 
-      <input type="submit" value="Query">
+      <input type="submit" value="Consultar">
       <br>
       <br>
       <span v-if="input">
@@ -43,7 +43,7 @@ export default {
       console.log(this.input);
       if (!this.input.key) {
         console.log('this.input$#: ');
-        let response = 'Please enter a Key to query for.';
+        let response = 'Ingresa la clave a consultar.';
         this.input.data = response;
         this.hideSpinner();
       } else {

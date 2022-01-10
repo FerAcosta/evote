@@ -1,12 +1,8 @@
 {
-  "fedDemocratBrief": "Donald Trump (Republican)",
-  "fedDemocratDescription": "My name is Federal Democrat Candidate 1. Here is my agenda.",
-  "republicanBrief": "Joe Biden (Democrat)",
-  "republicanDescription": "My name is Federal Republican Candidate 1. Here is my agenda.",
-  "greenBrief": "TBA (Green)",
-  "greenDescription": "My name is Federal Green Candidate 1. Here is my agenda.",
-  "independentBrief": "TBA (Independent)",
-  "independentDescription": "My name is Federal Independent Candidate 1. Here is my agenda.",
-  "libertarianBrief": "TBA (Libertarian)",
-  "libertarianDescription": "My name is Federal Libertarian Candidate 1. Here is my agenda."
+  "republicanBrief": "Tobey Maguire",
+	"republicanDescription": "Primer actor que protagonizó Spiderman, y la estrella de la trilogía de Sam Raimi, mucho antes de que despegara el Universo Cinematográfico de Marvel.",
+	"fedDemocratBrief": "Andrew Garfield",
+  "fedDemocratDescription": "Tras el fracaso de Spiderman 3 y debido a que Maguire ya era mayor, se introdujo a Garfield que protagonizó tres ediciones de Spiderman.",
+  "greenBrief": "Tom Holland",
+  "greenDescription": "Marvel y Disney obtuvieron los derechos para poner al personaje en el Universo Marvel, así intoduciendo a Holland, quién lucha junto a los Avengers y será un personaje importante para la cuarta fase del MCU.",
 }

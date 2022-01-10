@@ -111,7 +111,7 @@ app.post('/registerVoter', async (req, res) => {
 
       console.log('after network.invoke ');
       let parsedResponse = JSON.parse(invokeResponse);
-      parsedResponse += '. Use voterId to login above.';
+      parsedResponse += '. Usa tu número de cuenta para ingresar arriba.';
       res.send(parsedResponse);
 
     }
@@ -141,7 +141,7 @@ app.post('/validateVoter', async (req, res) => {
     let parsedResponse = await JSON.parse(invokeResponse);
     if (parsedResponse.ballotCast) {
       let response = {};
-      response.error = 'This voter has already cast a ballot, we cannot allow double-voting!';
+      response.error = 'Este usuario ya ha votado y no permitimos votación doble.';
       res.send(response);
     }
     // let response = `Voter with voterId ${parsedResponse.voterId} is ready to cast a ballot.`  

@@ -14,12 +14,12 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Home',
+      name: 'Inicio',
       component: Home
     },
     {
       path: '/castBallot',
-      name: 'CastBallot',
+      name: 'Emite tu Voto',
       component: CastBallot
     },
     {
@@ -39,7 +39,7 @@ export default new Router({
     },
     {
       path: '/getCurrentStanding',
-      name: 'GetCurrentStanding',
+      name: 'Sigue los Resultados',
       component: GetCurrentStanding
     }
   ]

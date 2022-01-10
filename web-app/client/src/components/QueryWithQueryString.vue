@@ -1,8 +1,8 @@
 <template>
   <div class="posts">
-    <h1>Select the type of object to query for</h1>
+    <h1>Seleccione el Tipo de Objeto para Consultar</h1>
     <select v-model="selected">
-      <option disabled value>Please select one</option>
+      <option disabled value>Selecciona uno</option>
       <option>ballot</option>
       <option>election</option>
       <option>votableItem</option>
@@ -12,7 +12,7 @@
 
     <br>
 
-    <button v-on:click="queryByQueryString()">Query the world State</button>
+    <button v-on:click="queryByQueryString()">Consultar el Estado Mundial</button>
 
     <br>
     <br>
@@ -52,7 +52,7 @@ export default {
         && this.selected!= 'voter' && this.selected != 'votableItem') {
 
         console.log('this . selectionesdfsdfds')
-        let result = `Please select a type of object!`;
+        let result = `Selecciona un tipo de objeto.`;
         this.response = result;
         this.hideSpinner();
 

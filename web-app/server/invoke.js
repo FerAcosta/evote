@@ -31,9 +31,9 @@ async function queryAll() {
     // Check to see if we've already enrolled the user.
     const userExists = await wallet.exists(peerIdentity);
     if (!userExists) {
-      console.log('An identity for the user ' + peerIdentity + ' does not exist in the wallet');
-      console.log('Run the registerUser.js application before retrying');
-      response.error = 'An identity for the user ' + peerIdentity + ' does not exist in the wallet. Register ' + peerIdentity + ' first';
+      console.log('La identidad para el usuario ' + peerIdentity + ' no existe.');
+      console.log('Utiliza la aplicación registerUser.js para volver a intentar');
+      response.error = 'No existe una identidad para el usuario ' + peerIdentity + 'en el sistema. Registra el usuario ' + peerIdentity + ' para poder votar.';
       return response;
     }
 

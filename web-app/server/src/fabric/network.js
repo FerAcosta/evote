@@ -44,7 +44,7 @@ exports.connectToNetwork = async function (userName) {
       console.log('An identity for the user ' + userName + ' does not exist in the wallet');
       console.log('Run the registerUser.js application before retrying');
       let response = {};
-      response.error = 'An identity for the user ' + userName + ' does not exist in the wallet. Register ' + userName + ' first';
+      response.error = 'No existe el usuario ' + userName + ' en el sistema. Registra a ' + userName + ' antes para poder votar.';
       return response;
     }
 
@@ -153,7 +153,7 @@ exports.invoke = async function (networkObj, isQuery, func, args) {
     }
 
   } catch (error) {
-    console.error(`Failed to submit transaction: ${error}`);
+    console.error(`Error al procesar transacción: ${error}`);
     return error;
   }
 };
@@ -168,7 +168,7 @@ exports.registerVoter = async function (voterId, registrarId, firstName, lastNam
 
   if (!registrarId || !voterId || !firstName || !lastName) {
     let response = {};
-    response.error = 'Error! You need to fill all fields before you can register!';
+    response.error = 'Error! Llena todos los campos para registrarte.';
     return response;
   }
 
@@ -185,8 +185,7 @@ exports.registerVoter = async function (voterId, registrarId, firstName, lastNam
     if (userExists) {
       let response = {};
       console.log(`An identity for the user ${voterId} already exists in the wallet`);
-      response.error = `Error! An identity for the user ${voterId} already exists in the wallet. Please enter
-        a different license number.`;
+      response.error = `Error! El usuario ${voterId} ya esta registrado. Porfavor revisa el número de usuario ingresado.`;
       return response;
     }
 
@@ -196,8 +195,8 @@ exports.registerVoter = async function (voterId, registrarId, firstName, lastNam
       console.log(`An identity for the admin user ${appAdmin} does not exist in the wallet`);
       console.log('Run the enrollAdmin.js application before retrying');
       let response = {};
-      response.error = `An identity for the admin user ${appAdmin} does not exist in the wallet. 
-        Run the enrollAdmin.js application before retrying`;
+      response.error = `No existe una identidad para el admin user ${appAdmin} en el sistema. 
+        Utiliza la aplicación enrollAdmin.js para volver a intentar`;
       return response;
     }
 
@@ -216,11 +215,11 @@ exports.registerVoter = async function (voterId, registrarId, firstName, lastNam
     const enrollment = await ca.enroll({ enrollmentID: voterId, enrollmentSecret: secret });
     const userIdentity = await X509WalletMixin.createIdentity(orgMSPID, enrollment.certificate, enrollment.key.toBytes());
     await wallet.import(voterId, userIdentity);
-    console.log(`Successfully registered voter ${firstName} ${lastName}. Use voterId ${voterId} to login above.`);
-    let response = `Successfully registered voter ${firstName} ${lastName}. Use voterId ${voterId} to login above.`;
+    console.log(`Se registro a ${firstName} ${lastName} para votar. Usa el usuario ${voterId} para ingresar arriba.`);
+    let response = `Se registro a ${firstName} ${lastName} para votar. Usa el usuario ${voterId} para ingresar arriba.`;
     return response;
   } catch (error) {
-    console.error(`Failed to register user + ${voterId} + : ${error}`);
+    console.error(`Error al registrar el usuario + ${voterId} + : ${error}`);
     let response = {};
     response.error = error;
     return response;
