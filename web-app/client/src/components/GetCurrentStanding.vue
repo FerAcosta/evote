@@ -1,10 +1,10 @@
 <template>
   <div class="posts">
-    <h1>Resultados Elección al Mejor Spiderman</h1>
+    <h1>Resultados de la Elección</h1>
 
     <button v-on:click="getCurrentStanding()">Obtener Resultados</button>
 
-    <br>
+  <br>
     <span v-if="response">
       <b>{{ response }}</b>
     </span>
@@ -12,7 +12,6 @@
     <vue-instant-loading-spinner id='loader' ref="Spinner"></vue-instant-loading-spinner>
     <div class="chart-wrapper">
       <chart :options="chartOptionsBar"></chart>
-      <br>
     </div>
   </div>
 </template>
@@ -21,7 +20,6 @@
 import PostsService from "@/services/apiService";
 import VueInstantLoadingSpinner from "vue-instant-loading-spinner/src/components/VueInstantLoadingSpinner.vue";
 import { Bar } from "vue-chartjs";
-
 export default {
   extends: Bar,
   name: "response",
@@ -39,7 +37,6 @@ export default {
       this.response = null;
       
       this.runSpinner();
-
       // console.log(`this.selected ${this.selected}`);
       const apiResponse = await PostsService.getCurrentStanding();
       console.log("%%%%%%%%%%%%%%%%%%%%%%%%%");
@@ -51,13 +48,14 @@ export default {
       }
       console.log("curStanding: ");
       console.log(currentStanding);
-
       this.chartOptionsBar = {
         xAxis: {
           data: [
-            "Republican",
-            "Democrat",
-            "Green"
+            "Andrew Garfield",
+            "Tom Holland",
+            "Ninguno",
+            "Todos",
+            "Tobey Maguire"
           ]
         },
         yAxis: {
@@ -70,7 +68,7 @@ export default {
           }
         ],
         title: {
-          text: "2022 ",
+          text: "2020 ",
           x: "center",
           textStyle: {
             fontSize: 24

@@ -111,7 +111,7 @@ app.post('/registerVoter', async (req, res) => {
 
       console.log('after network.invoke ');
       let parsedResponse = JSON.parse(invokeResponse);
-      parsedResponse += '. Usa tu número de cuenta para ingresar arriba.';
+      parsedResponse = 'Tu usuario de registró con éxito. Usa tu número de cuenta para ingresar arriba.';
       res.send(parsedResponse);
 
     }

@@ -5,11 +5,10 @@
         <br>-<p><router-link to="/">Inicio</router-link>&nbsp;&nbsp;&nbsp;         
         <!-- <router-link to="/castBallot">Cast Ballot</router-link>&nbsp; -->
         <router-link to="/getCurrentStanding">Resultados de Votación</router-link>&nbsp;</p>
-
+        
       <router-view></router-view>
     </div>
 </template>
-
 <script>
 
 export default {

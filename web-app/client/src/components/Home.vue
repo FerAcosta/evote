@@ -1,6 +1,6 @@
 <template>
   <div class="posts">
-    <h1>Elección del Mejor Spiderman</h1>
+    <h1>Elección Digital Certificada por Blockchain</h1>
     <br>
     <h3>Si estas registrado, ingresa tu número de cuenta debajo para votar.</h3>
     <!--span><b>{{ response }}</b></span><br /-->

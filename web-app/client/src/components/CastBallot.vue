@@ -1,7 +1,6 @@
 <template>
   <div class="posts">
-    <h1>Emite tu Voto</h1>
-    <br>
+    <h1>Emite tu Voto para la Mejor Versión de Spiderman en tu Opinión</h1>
     <input type="radio" id="one" value="Republican" v-model="picked">
     <label for="one">Tobey Maguire</label>
     <br>
@@ -10,6 +9,12 @@
     <br>
     <input type="radio" id="two" value="Green" v-model="picked">
     <label for="two">Tom Holland</label>
+    <br>
+    <input type="radio" id="two" value="Libertarian" v-model="picked">
+    <label for="two">Todos</label>
+    <br>
+    <input type="radio" id="two" value="Independent" v-model="picked">
+    <label for="two">Ninguno</label>
     <br>
     <br>
     <!--span><b>{{ response }}</b></span><br /-->
@@ -90,7 +95,7 @@ export default {
         console.log(apiResponse);
 
         if (apiResponse.data.error) {
-          this.response= apiResponse.data.error;
+          this.response= 'Este usuario ya ha emitido su voto y no permitimos votación doble. Asegurate de ingresar un número de usuario válido.'
           await this.hideSpinner();
         } else if (apiResponse.data.message) {
           this.response= `No se pudo encontrar el número de usuario ${this.input.voterId}
@@ -100,8 +105,9 @@ export default {
         else {
           let response = `Su voto se realizó con éxito 
             con el número de usuario ${apiResponse.data.voterId}.
-            Puedes seguir los resultados actualizados de la votación en la pestaña "Resultados de Votación".     ¡Gracias por participar en
+            ¡Gracias por participar en
             en esta votación!`;
+
 
           this.response = response;
 
