@@ -1,35 +1,24 @@
 <template>
   <div class="posts">
-    <h1>Cast Ballot</h1>
-    <input type="radio" id="one" value="Republican" v-model="picked">
-    <label for="one">Donald Trump (Republican)</label>
-    <br>
-    <input type="radio" id="two" value="Democrat" v-model="picked">
-    <label for="two">TBA (Democratic)</label>
+    <h1>Emite tu Voto para la Mejor Versión de Spiderman en tu Opinión</h1>
+    <br>  
+    <input type="radio" id="one" value="Democrat" v-model="picked">
+    <label for="one">Tobey Maguire</label>
     <br>
     <input type="radio" id="two" value="Green" v-model="picked">
-    <label for="two">TBA (Green Party)</label>
+    <label for="two">Andrew Garfield</label>
     <br>
     <input type="radio" id="two" value="Independent" v-model="picked">
-    <label for="two">TBA (Independent)</label>
-    <br>
-    <input type="radio" id="two" value="Libertarian" v-model="picked">
-    <label for="two">TBA (Libertarian)</label>
-    <br>
-    <br>
-    <span v-if="picked">
-      Picked:
-      <b>{{ picked }}</b>
-    </span>
+    <label for="two">Tom Holland</label>
     <br>
     <br>
     <!--span><b>{{ response }}</b></span><br /-->
     <form v-on:submit="castBallot">
       <!-- <input type="text" value="2sww593dc034wb2twdk91r" v-model="input.electionId"  >
       <br>-->
-      <input type="text" v-model="input.voterId" placeholder="Enter VoterId">
+      <input type="text" v-model="input.voterId" placeholder="Número de Cuenta">
       <br>
-      <input type="submit" value="Cast Vote">
+      <input type="submit" value="Emitir Voto">
       <br>
     </form>
 
@@ -78,14 +67,14 @@ export default {
       if (this.picked === null ) {
         console.log('this.picked === null')
 
-        let response = "You have to pick a party to vote for!";
+        let response = "¡Debes elegir una opción para votar!";
         this.response = response;
         await this.hideSpinner();
       
       } else if (this.input.voterId === undefined) {
         console.log('this.voterId === undefined')
 
-        let response = "You have to enter your voterId to cast a vote!";
+        let response = "Ingresa tu número de cuenta para votar.";
         this.response = response;
         await this.hideSpinner();
 
@@ -101,17 +90,19 @@ export default {
         console.log(apiResponse);
 
         if (apiResponse.data.error) {
-          this.response= apiResponse.data.error;
+          this.response= 'Este usuario ya ha emitido su voto y no permitimos votación doble. Asegurate de ingresar un número de usuario válido.'
           await this.hideSpinner();
         } else if (apiResponse.data.message) {
-          this.response= `Could not find voter with voterId ${this.input.voterId}
-            in the state. Make sure you are entering a valid voterId`;
+          this.response= `No se pudo encontrar el número de usuario ${this.input.voterId}
+            en el sistema. Asegurate de ingresar un número de usuario válido.`;
           await this.hideSpinner();
         } 
         else {
-          let response = `Successfully recorded vote for ${this.picked} party 
-            for voter with voterId ${apiResponse.data.voterId}. Thanks for 
-            doing your part and voting!`;
+          let response = `Su voto se realizó con éxito 
+            con el número de usuario ${apiResponse.data.voterId}.
+            ¡Gracias por participar en
+            en esta votación!`;
+
 
           this.response = response;
 

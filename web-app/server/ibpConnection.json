@@ -1,0 +1,41 @@
+{
+    "name": "votermspprofile",
+    "description": "Network on IBP v2",
+    "version": "1.0.0",
+    "client": {
+        "organization": "votermsp"
+    },
+    "organizations": {
+        "votermsp": {
+            "mspid": "votermsp",
+            "certificateAuthorities": [
+                "159.122.186.2:30119"
+            ],
+            "peers": [
+                "159.122.186.2:31909"
+            ]
+        }
+    },
+    "peers": {
+        "159.122.186.2:31909": {
+            "url": "grpcs://159.122.186.2:31909",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICDjCCAbSgAwIBAgIUag8FrilA+Uv1S/FZfneoh3VwiYQwCgYIKoZIzj0EAwIw\nZTELMAkGA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMRQwEgYDVQQK\nEwtIeXBlcmxlZGdlcjEPMA0GA1UECxMGRmFicmljMRYwFAYDVQQDEw12b3RlcmNh\nLXRsc2NhMB4XDTIyMDExMTAwMjgwMFoXDTM3MDEwNzAwMjgwMFowZTELMAkGA1UE\nBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMRQwEgYDVQQKEwtIeXBlcmxl\nZGdlcjEPMA0GA1UECxMGRmFicmljMRYwFAYDVQQDEw12b3RlcmNhLXRsc2NhMFkw\nEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEoQB8rr4hAs+hI/KHUiloXpter9W8LFfL\n2ksNRyaiFwJ2Y3XOtlNwjbuS3fnvVc0I0q/5XbGN8L5EGZwVMX1Ko6NCMEAwDgYD\nVR0PAQH/BAQDAgEGMA8GA1UdEwEB/wQFMAMBAf8wHQYDVR0OBBYEFNSD/Ezs1fZC\nwk3gI7sJ+8HBqUK3MAoGCCqGSM49BAMCA0gAMEUCIQDCtDBvB1PDNBCClx4UglRT\nrQ1l2YiNcBecn9+TGWYADgIgZDG0o1BWOmFrXOrkTPL7j/JHZW3+W1QRrV06rzMI\n904=\n-----END CERTIFICATE-----\n"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "159.122.186.2"
+            }
+        }
+    },
+    "certificateAuthorities": {
+        "159.122.186.2:30119": {
+            "url": "https://159.122.186.2:30119",
+            "caName": "ca",
+            "tlsCACerts": {
+                "pem": [
+                    "-----BEGIN CERTIFICATE-----\nMIIB+jCCAaGgAwIBAgIQDKYmr+uHibY7eppc7QI4XzAKBggqhkjOPQQDAjByMQsw\nCQYDVQQGEwJVUzEXMBUGA1UECBMOTm9ydGggQ2Fyb2xpbmExDzANBgNVBAcTBkR1\ncmhhbTEMMAoGA1UEChMDSUJNMRMwEQYDVQQLEwpCbG9ja2NoYWluMRYwFAYDVQQD\nEw0xNTkuMTIyLjE4Ni4yMB4XDTIyMDExMTAwMzI0N1oXDTMyMDEwOTAwMzI0N1ow\ncjELMAkGA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMQ8wDQYDVQQH\nEwZEdXJoYW0xDDAKBgNVBAoTA0lCTTETMBEGA1UECxMKQmxvY2tjaGFpbjEWMBQG\nA1UEAxMNMTU5LjEyMi4xODYuMjBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABFu8\n/Ks1zpORw3FTYaVPw5JVgOxMJPlEWrYJuovxJsiwhj1u5pt76UD1lNw9uT2g61JY\nHW/XjN/W9kOzuorjxZCjGTAXMBUGA1UdEQQOMAyHBJ96ugKHBJ96ugIwCgYIKoZI\nzj0EAwIDRwAwRAIga0sLv97poILjOZbIdCFzOI8Qd88RZ1cgdO7Juv6OhI0CIC8z\noKiK3vVN0w2wErAOb849AlREhr5+dGPQFqYiVQ53\n-----END CERTIFICATE-----\n"
+                ]
+            }
+        }
+    }
+}

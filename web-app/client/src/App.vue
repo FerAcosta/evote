@@ -1,18 +1,14 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">    
+   <img alt="CS Logo" src="./assets/logo.png" width="350" height="80">
       
-        <p><router-link to="/">Home</router-link>&nbsp;          
+        <br>-<p><router-link to="/">Inicio</router-link>&nbsp;&nbsp;&nbsp;         
         <!-- <router-link to="/castBallot">Cast Ballot</router-link>&nbsp; -->
-        <router-link to="/QueryAll">QueryAll</router-link></p>
-        <router-link to="/queryWithQueryString">Query by Type</router-link>&nbsp;
-        <router-link to="/queryByKey">Query by Key</router-link>&nbsp;
-        <router-link to="/getCurrentStanding">Get Poll Standings</router-link>&nbsp;
-      
+        <router-link to="/getCurrentStanding">Resultados de Votación</router-link>&nbsp;</p>
+        
       <router-view></router-view>
     </div>
 </template>
-
 <script>
 
 export default {
@@ -27,7 +23,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 40px;
 }
 .chart-wrapper {
   width: 100%;

@@ -1,10 +1,10 @@
 <template>
   <div class="posts">
-    <h1>Get the Current Poll Standings</h1>
+    <h1>Resultados de la Elección</h1>
 
-    <button v-on:click="getCurrentStanding()">Check Poll</button>
+    <button v-on:click="getCurrentStanding()">Obtener Resultados</button>
 
-    <br>
+  <br>
     <span v-if="response">
       <b>{{ response }}</b>
     </span>
@@ -20,7 +20,6 @@
 import PostsService from "@/services/apiService";
 import VueInstantLoadingSpinner from "vue-instant-loading-spinner/src/components/VueInstantLoadingSpinner.vue";
 import { Bar } from "vue-chartjs";
-
 export default {
   extends: Bar,
   name: "response",
@@ -38,7 +37,6 @@ export default {
       this.response = null;
       
       this.runSpinner();
-
       // console.log(`this.selected ${this.selected}`);
       const apiResponse = await PostsService.getCurrentStanding();
       console.log("%%%%%%%%%%%%%%%%%%%%%%%%%");
@@ -50,15 +48,12 @@ export default {
       }
       console.log("curStanding: ");
       console.log(currentStanding);
-
       this.chartOptionsBar = {
         xAxis: {
           data: [
-            "Democrat",
-            "Green",
-            "Independent",
-            "Libertarian",
-            "Republican"
+            "Tobey Maguire",
+            "Andrew Garfield",
+            "Tom Holland"
           ]
         },
         yAxis: {
